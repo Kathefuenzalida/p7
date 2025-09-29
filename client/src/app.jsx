@@ -1,19 +1,18 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Success from "./pages/Success";
-import Failure from "./pages/Failure";
-import Pending from "./pages/Pending";
+import React from "react";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";  // 👈 Aquí deberían estar tus secciones
+import "bootstrap/dist/css/bootstrap.min.css"; // importante si usas react-bootstrap
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/success" element={<Success />} />
-        <Route path="/failure" element={<Failure />} />
-        <Route path="/pending" element={<Pending />} />
-      </Routes>
-    </Router>
+    <>
+      <Navbar />
+      <main>
+        <Home />  {/* 👈 Aquí deberían estar las secciones con plantas, héroe, etc. */}
+      </main>
+      <Footer />
+    </>
   );
 }
 
