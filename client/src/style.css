@@ -1,0 +1,32 @@
+/* Botón Mercado Pago */
+.buy-btn {
+  background-color: #009ee3;
+  border: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buy-btn:hover {
+  background-color: #007bb8;
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+
+.footer .social-icons a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.footer .social-icons a:hover {
+  color: #009ee3;
+}
