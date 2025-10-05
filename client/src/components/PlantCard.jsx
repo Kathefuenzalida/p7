@@ -14,7 +14,6 @@ function PlantCard({ plant }) {
       <Card.Body className="text-center">
         <Card.Title>{plant.name}</Card.Title>
         <Card.Text>{plant.price.toLocaleString("es-CL")} CLP</Card.Text>
-        {/* 👇 aquí pasamos la info de la planta */}
         <BuyButton plant={plant} />
       </Card.Body>
     </Card>

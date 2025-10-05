@@ -34,4 +34,4 @@ router.post('/seed', async (_req, res) => {
   res.status(201).json(demo);
 });
 
-module.exports = router; // ← ¡IMPRESCINDIBLE!
+module.exports = router;
