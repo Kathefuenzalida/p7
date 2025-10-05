@@ -1,18 +1,23 @@
-// server/src/middleware/auth.js
 import jwt from "jsonwebtoken";
 
 export const authMiddleware = (req, res, next) => {
-  const token = req.cookies.token; // Leer token desde cookies
-
-  if (!token) {
-    return res.status(401).json({ msg: "No autorizado, falta token" });
-  }
-
   try {
+    // 1. Leer el token desde la cookie
+    const token = req.cookies?.token;
+
+    if (!token) {
+      return res.status(401).json({ msg: "No autorizado, falta token" });
+    }
+
+    // 2. Verificar el token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded.user; // guarda el usuario en req.user para usarlo en controladores
+
+    // 3. Guardar el user en el request
+    req.user = decoded.user;
+
     next();
   } catch (error) {
-    res.status(401).json({ msg: "Token inválido" });
+    console.error("❌ Error en authMiddleware:", error.message);
+    res.status(401).json({ msg: "Token inválido o expirado" });
   }
 };
